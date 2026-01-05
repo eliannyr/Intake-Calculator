@@ -1,1 +1,65 @@
-<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Water Consumption</title><link href=styleWater.css rel=stylesheet><h1>Water Consumption</h1><section class=container><div class=general><div class=dropdown-div><label>Measure body weight in:</label><div class=dropdown><button id=dropdown-button>Pounds (lbs)</button> <select class=options id=options onchange=dropdownOptions()><option value=lbs>Pounds (lbs)<option value=kgs>Kilos (kgs)</select></div></div><div class=weight-input><label>Enter weight:</label> <input id=weight-input></div><div class=exercise-time><label>Exercise time:</label> <input id=exercise-time-hrs> <span class=indicator>hrs and/or</span> <input id=exercise-time-mins> <span class=indicator>mins (if none, leave empty).</span></div><div id=calculate-button><button class=calculate-button>Calculate</button></div><div class=note><p><strong>Note:</strong> "Exercise time" refers to any type of physical activity.</div><div class=total-oz id=total-oz><label><strong>Daily water intake:</strong></label> <span id=result></span> <span id=oz></span></div></div><div class=button-container><button class=home-button onclick=homePage()>Go to Home Page</button></div></section><script src=scriptWater.js></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Consumption</title>
+    <link rel="stylesheet" href="styleWater.css">
+</head>
+
+<body>
+
+    <h1>Water Consumption</h1>
+
+    <section class="container">
+
+        <div class="general">
+            <div class="dropdown-div">
+                <label>Measure body weight in:</label>
+                <div class="dropdown">
+                    <button id="dropdown-button">Pounds (lbs)</button>
+                    <select class="options" id="options" onchange="dropdownOptions();">
+                        <option value="lbs">Pounds (lbs)</option>
+                        <option value="kgs">Kilos (kgs)</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="weight-input">
+                <label>Enter weight:</label>
+                <input type="text" id="weight-input">
+            </div>
+    
+            <div class="exercise-time">
+                <label>Exercise time: </label>
+                <input type="text" id="exercise-time-hrs">
+                <span class="indicator">hrs and/or</span>
+                <input type="text" id="exercise-time-mins">
+                <span class="indicator">mins (if none, leave empty).</span>
+            </div>
+    
+            <div id="calculate-button">
+                <button class="calculate-button">Calculate</button>
+            </div>
+    
+            <div class="note">
+                <p><strong>Note:</strong> "Exercise time" refers to any type of physical activity.</p>
+            </div>
+    
+            <div class="total-oz" id="total-oz">
+                <label><strong>Daily water intake:</strong></label>
+                <span id="result"></span>
+                <span id="oz"></span>
+            </div> 
+        </div>
+
+        <div class="button-container">
+            <button class="home-button" onclick="homePage();">Go to Home Page</button>
+        </div>
+        
+    </section>
+
+    <!-- backend code -->
+    <script src="scriptWater.js"></script>
+</body>
+</html>
