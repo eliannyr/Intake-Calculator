@@ -1,1 +1,63 @@
-<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Daily Intake</title><link href=styleDaily.css rel=stylesheet><section><h1>Daily Intake</h1><div class=container><div class="tab tab-2">Food Name:<input id=fname name=fname> Protein:<input id=protein name=protein type=number> Calories:<input id=calories name=calories type=number> <button onclick=addHtmlTableRow()>Add</button> <button onclick=editHtmlTableSelectedRow()>Edit</button> <button onclick=removeSelectedRow()>Remove</button></div><div class="tab tab-1"><table border=1 id=table><thead><tr><th>Food Name<th>Protein<th>Calories<tbody id=tbody><tr><td>e.g. Quest Chips<td>19<td>140<tfoot id=tfoot><tr><th>Total<th id=total-protein>0<th id=total-calories>0</table></div></div><div class=button-container><button onclick=homePage()>Go to Home Page</button></div></section><script src=scriptDaily.js></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Intake</title>
+    <link rel="stylesheet" href="styleDaily.css">
+</head>
+
+<body>
+    <section>
+        <h1>Daily Intake</h1>
+
+        <div class="container">
+
+            <div class="tab tab-2">
+                Food Name:<input type="text" name="fname" id="fname">
+                Protein:<input type="number" name="protein" id="protein">
+                Calories:<input type="number" name="calories" id="calories">
+
+                <button onclick="addHtmlTableRow();">Add</button>
+                <button onclick="editHtmlTableSelectedRow();">Edit</button>
+                <button onclick="removeSelectedRow();">Remove</button>
+            </div>
+
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <thead>
+                        <tr>
+                            <th>Food Name</th>
+                            <th>Protein</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!-- Rows will be inserted here -->
+                        <tr>
+                            <td>e.g. Quest Chips</td>
+                            <td>19</td>
+                            <td>140</td>
+                        </tr>
+                    </tbody>
+                    <tfoot id="tfoot">
+                        <tr>
+                            <th>Total</th>
+                            <th id="total-protein">0</th>
+                            <th id="total-calories">0</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="button-container">
+            <button onclick="homePage();">Go to Home Page</button>
+        </div>
+        
+    </section>
+    <!-- backend code -->
+    <script src="scriptDaily.js"></script>
+</body>
+</html>
