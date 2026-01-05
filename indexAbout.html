@@ -1,1 +1,96 @@
-<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Instructions</title><link href=styleAbout.css rel=stylesheet><script>function homePage(){window.location.href="index.html"}function creatorMessage(){message=document.getElementById("message").value,alert("thank you for visiting this site :)")}</script><section><h1>Instructions</h1><div class=daily-intake><h2>Daily Intake</h2><p>Computes the total amount of protein and calories consumed in a day. The aim is to make the counting process easier for everyone.<p><p class=how><strong>How to use this calculator:</strong><p>1. To add table content: Enter the food name, protein, and calorie amount. Then click the "Add" button.<p>2. To edit the table: Select the desired row, type the new information, then click the "Edit" button.<p>3. To remove a row: Select the desired row, then click the "Remove" button.<p>4. As the information is added, edited, or removed, the "Total" row automatically updates the values.</div><div class=water-intake><h2>Water Consumption</h2><p>Computes daily water intake (in both ounces and liters) based on weight and physical activity.<p><p class=how><strong>How to use this calculator:</strong><p>1. From the dropdown menu, select the desired unit of measurement for body weight. By default, 'Pounds' will be used for calculations unless changed.<p>2. Enter body weight using the selected unit of measurement.<p>3. Enter the duration of physical activity in hours, minutes, or both. This section may be left empty if not applicable.<p>4. Click the 'Calculate' button.</div><div class=button-container><button onclick=homePage()>Go to Home Page</button></div><div class=creator1><p>Created by <strong>elianny r</strong>.</div><div class=button-container><button onclick=creatorMessage() id=message>Click here</button></div></section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="styleAbout.css">
+</head>
+
+<script>
+    function homePage(){
+    window.location.href = 'index.html';
+    }
+
+    function creatorMessage(){
+        message = document.getElementById("message").value;
+        alert("thank you for visiting this website :)");
+    }
+</script>
+
+<body>
+    <section>
+        <h1>Instructions</h1>
+
+        <div class="daily-intake">
+            <h2>Daily Intake</h2>
+
+            <p>Computes the total amount of protein and calories consumed in a day.
+                The aim is to make the counting process easier for everyone.
+            </p>
+    
+            <p>
+                <p class="how"><strong>How to use this calculator:</strong></p>
+
+                <p>
+                    1. To add table content: Enter the food name, protein, and calorie amount. Then click the "Add" button.
+                </p>
+
+                <p>
+                    2. To edit the table: Select the desired row, type the new information, then click the "Edit" button.
+                </p>
+
+                <p>
+                    3. To remove a row: Select the desired row, then click the "Remove" button.
+                </p>
+                
+                <p>
+                    4. As the information is added, edited, or removed, the "Total" row automatically updates the values.
+                </p>
+            </p>
+        </div>
+
+        <div class="water-intake">
+            <h2>Water Consumption</h2>
+
+            <p>Computes daily water intake (in both ounces and liters) based on weight and physical activity.
+            </p>
+    
+            <p>
+                <p class="how"><strong>How to use this calculator:</strong></p>
+
+                <p>
+                    1. From the dropdown menu, select the desired unit of measurement for body weight.
+                    By default, 'Pounds' will be used for calculations unless changed.
+                </p>
+
+                <p>
+                    2. Enter body weight using the selected unit of measurement.
+                </p>
+
+                <p>
+                    3. Enter the duration of physical activity in hours, minutes, or both. This section may be left empty if not applicable. 
+                </p>
+                
+                <p>
+                    4. Click the 'Calculate' button.
+                </p>
+            </p>
+
+        </div>
+
+        <div class="button-container">
+            <button onclick="homePage();">Go to Home Page</button>
+        </div>
+
+        <div class="creator1">
+            <p>Created by <strong>elianny r</strong>.</p>
+        </div>
+
+        <div class="button-container">
+            <button id="message" onclick="creatorMessage();">Click here</button>
+        </div>
+
+    </section>
+</body>
+</html>
