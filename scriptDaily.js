@@ -1,1 +1,130 @@
-var rIndex=-1;function checkEmptyInput(){var e=!1,t=document.getElementById("fname").value,n=document.getElementById("protein").value,l=document.getElementById("calories").value;return""===t?(alert("Please enter food name :v !!"),e=!0):""===n?(alert("Please enter protein amount :v !!"),e=!0):""===l&&(alert("Please enter calorie amount :v !!"),e=!0),e}function addHtmlTableRow(){if(!checkEmptyInput()){var e=document.getElementById("tbody").insertRow(),t=e.insertCell(0),n=e.insertCell(1),l=e.insertCell(2),o=document.getElementById("fname").value,r=document.getElementById("protein").value,d=document.getElementById("calories").value;t.innerHTML=o,n.innerHTML=r,l.innerHTML=d,selectedRowToInput(),updateTotals()}}function selectedRowToInput(){for(var e=document.getElementById("tbody"),t=0;t<e.rows.length;t++)e.rows[t].onclick=function(){rIndex=this.rowIndex-1,console.log("Selected row index for editing: ",rIndex),document.getElementById("fname").value=this.cells[0].innerHTML,document.getElementById("protein").value=this.cells[1].innerHTML,document.getElementById("calories").value=this.cells[2].innerHTML}}function editHtmlTableSelectedRow(){var e=document.getElementById("fname").value,t=document.getElementById("protein").value,n=document.getElementById("calories").value;if(!checkEmptyInput()){var l=document.getElementById("tbody");if(rIndex>=0&&rIndex<l.rows.length){var o=l.rows[rIndex];console.log("Editing row index: ",rIndex),o.cells[0].innerHTML=e,o.cells[1].innerHTML=t,o.cells[2].innerHTML=n,updateTotals(),clearInputFields()}else alert("Select a row to edit :v !!")}}function removeSelectedRow(){var e=document.getElementById("tbody");rIndex>=0&&rIndex<e.rows.length?(console.log("Removing row index: ",rIndex),e.deleteRow(rIndex),clearInputFields(),rIndex=-1,updateTotals()):alert("Select a row to remove :v !!")}function updateTotals(){for(var e=0,t=0,n=document.getElementById("tbody"),l=0;l<n.rows.length;l++)e+=parseFloat(n.rows[l].cells[1].innerHTML)||0,t+=parseFloat(n.rows[l].cells[2].innerHTML)||0;document.getElementById("total-protein").innerHTML=e,document.getElementById("total-calories").innerHTML=t}function clearInputFields(){document.getElementById("fname").value="",document.getElementById("protein").value="",document.getElementById("calories").value=""}function homePage(){window.location.href="index.html"}window.onload=function(){updateTotals()},selectedRowToInput();
+var rIndex = -1; // Initialize rIndex with -1 to indicate no selection
+
+// Function to check if any input field is empty
+function checkEmptyInput() {
+    var isEmpty = false,
+        fname = document.getElementById("fname").value,
+        protein = document.getElementById("protein").value,
+        calories = document.getElementById("calories").value;
+
+    if (fname === "") {
+        alert("Please enter food name :v !!");
+        isEmpty = true;
+    } else if (protein === "") {
+        alert("Please enter protein amount :v !!");
+        isEmpty = true;
+    } else if (calories === "") {
+        alert("Please enter calorie amount :v !!");
+        isEmpty = true;
+    }
+    return isEmpty;
+}
+
+// Function to add a new row to the table
+function addHtmlTableRow() {
+    if (!checkEmptyInput()) {
+        var tbody = document.getElementById("tbody");
+        var newRow = tbody.insertRow();
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var fname = document.getElementById("fname").value;
+        var protein = document.getElementById("protein").value;
+        var calories = document.getElementById("calories").value;
+
+        cell1.innerHTML = fname;
+        cell2.innerHTML = protein;
+        cell3.innerHTML = calories;
+
+        // Re-attach event listeners to rows
+        selectedRowToInput();
+        updateTotals(); // Update totals after adding a row
+    }
+}
+
+// Function to attach event listeners to rows for selection
+function selectedRowToInput() {
+    var tbody = document.getElementById("tbody");
+    for (var i = 0; i < tbody.rows.length; i++) {
+        tbody.rows[i].onclick = function() {
+            // Calculate rIndex within tbody
+            rIndex = this.rowIndex - 1; // Adjust rIndex to account for the header row
+            console.log("Selected row index for editing: ", rIndex); // Debugging
+            document.getElementById("fname").value = this.cells[0].innerHTML;
+            document.getElementById("protein").value = this.cells[1].innerHTML;
+            document.getElementById("calories").value = this.cells[2].innerHTML;
+        };
+    }
+}
+
+// Function to edit the selected row
+function editHtmlTableSelectedRow() {
+    var fname = document.getElementById("fname").value,
+        protein = document.getElementById("protein").value,
+        calories = document.getElementById("calories").value;
+
+    if (!checkEmptyInput()) {
+        var tbody = document.getElementById("tbody");
+        // Ensure rIndex is valid and within bounds
+        if (rIndex >= 0 && rIndex < tbody.rows.length) {
+            var selectedRow = tbody.rows[rIndex];
+            console.log("Editing row index: ", rIndex); // Debugging
+            selectedRow.cells[0].innerHTML = fname;
+            selectedRow.cells[1].innerHTML = protein;
+            selectedRow.cells[2].innerHTML = calories;
+            updateTotals(); // Update totals after editing a row
+            clearInputFields(); // Clear input fields after editing
+        } else {
+            alert("Select a row to edit :v !!");
+        }
+    }
+}
+
+// Function to remove the selected row
+function removeSelectedRow() {
+    var tbody = document.getElementById("tbody");
+    if (rIndex >= 0 && rIndex < tbody.rows.length) { // Ensure rIndex is valid and within bounds
+        console.log("Removing row index: ", rIndex); // Debugging
+        tbody.deleteRow(rIndex); // Delete the row at rIndex
+        clearInputFields(); // Clear input fields after removal
+        rIndex = -1; // Reset rIndex after removal
+        updateTotals(); // Update totals after removing a row
+    } else {
+        alert("Select a row to remove :v !!");
+    }
+}
+
+// Function to update the totals in the footer
+function updateTotals() {
+    var totalProtein = 0;
+    var totalCalories = 0;
+    var tbody = document.getElementById("tbody");
+
+    for (var i = 0; i < tbody.rows.length; i++) {
+        totalProtein += parseFloat(tbody.rows[i].cells[1].innerHTML) || 0;
+        totalCalories += parseFloat(tbody.rows[i].cells[2].innerHTML) || 0;
+    }
+
+    document.getElementById("total-protein").innerHTML = totalProtein;
+    document.getElementById("total-calories").innerHTML = totalCalories;
+}
+
+// Function to clear input fields
+function clearInputFields() {
+    document.getElementById("fname").value = "";
+    document.getElementById("protein").value = "";
+    document.getElementById("calories").value = "";
+}
+
+// Initialize totals on page load
+window.onload = function() {
+    updateTotals();
+};
+
+// Function to redirect to the home page
+function homePage() {
+    window.location.href = 'index.html';
+}
+
+// Call the function to set the initial row listeners
+selectedRowToInput();
