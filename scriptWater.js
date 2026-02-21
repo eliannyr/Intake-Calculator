@@ -1,4 +1,3 @@
-// greater than >, less than < ... :v
 let weight;
 let hrs_input;
 let mins_input;
@@ -9,7 +8,7 @@ let liters;
 let lbs = document.getElementById("lbs");
 let kgs = document.getElementById("kgs");
 let mins;
-let total_mins; //if hrs and mins have input >0 (greater than .. lol)
+let total_mins; 
 let daily_oz;
 let final_oz;
 let finalLiters;
