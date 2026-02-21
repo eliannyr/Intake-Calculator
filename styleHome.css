@@ -27,7 +27,7 @@ button{
 
 .buttons{
     text-align: center;
-    border-radius: 50px; /* roundness of buttons */
+    border-radius: 50px;
     border-style: solid;
     border-width: 4px;
     padding: 20px;
@@ -58,13 +58,13 @@ button{
 
 h1{
     text-align: center;
-    font-size: 38px;
+    font-size: 50px;
     color: black;
 }
 
 h2{
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
     color: black;
 }
 
@@ -79,11 +79,7 @@ h4{
 }
 
 body {
-    background: radial-gradient(circle at 10% 20%, rgb(242, 186, 245) 0%, rgb(208, 185, 253) 33.1%, rgb(246, 203, 241) 90%); /*not same as rest*/
+    background: #dcd6f7;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-#creator1{
-    margin-bottom: 5px;
 }

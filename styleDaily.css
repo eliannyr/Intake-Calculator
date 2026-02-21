@@ -1,7 +1,7 @@
 section{
     margin: 0 auto;
-    width: 85%; /* section width on phone: always use % here */
-    max-width: 80vh; /* section width on computer: always use vh/px/em here, NOT % */
+    width: 85%;
+    max-width: 80vh;
 }
 
 .container{
@@ -56,7 +56,7 @@ input{
 }
 
 table {
-    margin: 20px auto; /* Center the table and add some spacing */
+    margin: 20px auto;
     background-color: #f8e9e9;
     border-radius: 5px;
     border-width: 5px;
@@ -70,7 +70,7 @@ h1{
 }
 
 body {
-    background: radial-gradient(circle at 10% 20%, rgb(186, 190, 245) 0%, rgb(192, 192, 245) 33.1%, rgb(218, 203, 246) 90%);
+    background: #dcd6f7;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
